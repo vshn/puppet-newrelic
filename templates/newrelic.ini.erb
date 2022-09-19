@@ -747,9 +747,11 @@ newrelic.webtransaction.name.files = "<%= @newrelic_ini_webtransaction_name_file
 ; Default: true
 ; Info   : Enables or disables support for Cross Application Tracing, aka "CAT".
 ;
+; deprecated as of v7.4, removed from v8.2
 ;newrelic.cross_application_tracer.enabled = true
-<%- if @newrelic_ini_cross_application_tracer_enabled -%>
-newrelic.cross_application_tracer.enabled = "true"
-<% else %>
-newrelic.cross_application_tracer.enabled = "false"
+
+; Setting: distributed_tracing_enabled
+; defaults to true, but disabled in the profile as it causes high costs for customers
+<%- if @newrelic_ini_distributed_tracing_enabled -%>
+newrelic.distributed_tracing_enabled = <%= @newrelic_ini_distributed_tracing_enabled %>
 <%- end -%>
