@@ -2,6 +2,12 @@
 
 Release notes for the fsalum-newrelic module.
 
+
+#### 5.0.0 - 2022-09-19
+
+* Removes deprecated cross_application_tracer_enabled option
+* Adds option to configure distributed_tracing_enabled option
+
 ------------------------------------------
 #### 4.3.2 - 2022-05-27
 
