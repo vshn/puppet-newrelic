@@ -2,6 +2,10 @@
 
 Release notes for the fsalum-newrelic module.
 
+#### 5.0.1 - 2022-09-19
+
+* Explicitly set distributed_tracing_enabled in template
+
 
 #### 5.0.0 - 2022-09-19
 
