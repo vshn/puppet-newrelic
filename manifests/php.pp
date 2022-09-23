@@ -38,6 +38,7 @@ define newrelic::php (
   $newrelic_license_key                                  = undef,
   $newrelic_ini_appname                                  = undef,
   $newrelic_ini_browser_monitoring_auto_instrument       = undef,
+  $newrelic_ini_distributed_tracing_enabled              = undef,
   $newrelic_ini_enabled                                  = undef,
   $newrelic_ini_error_collector_enabled                  = undef,
   $newrelic_ini_error_collector_prioritize_api_errors    = undef,
