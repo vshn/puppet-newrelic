@@ -2,6 +2,10 @@
 
 Release notes for the fsalum-newrelic module.
 
+#### 5.0.3 - 2022-10-31
+
+* Template config expect boolean variables to be quoted
+
 #### 5.0.2 - 2022-09-23
 
 * Make sure distributed_tracing_enabled is forwarded to the newrelic php class
