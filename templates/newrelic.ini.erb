@@ -8,7 +8,9 @@
 ; extension directory changing if you change PHP installations or versions.
 ; If you do not use an absolute path then the file must be installed in the
 ; active configuration's extension directory.
+<%- if @newrelic_php_extension_enabled -%>
 extension = "newrelic.so"
+<%- end -%>
 
 [newrelic]
 ;
