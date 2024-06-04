@@ -4,7 +4,7 @@ Release notes for the fsalum-newrelic module.
 
 #### 5.1.0 - 2024-06-04
 
-* Add newrelic_php_extension_enabled option
+* Add possibility to install and configure newrelic php agent without loading the extension. This allows loading the extension from within php on request using php's dl() function. 
 
 #### 5.0.3 - 2022-10-31
 
