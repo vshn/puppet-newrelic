@@ -49,7 +49,7 @@ class newrelic::agent::php (
   $newrelic_ini_framework                                = undef,
   $newrelic_ini_high_security                            = undef,
   $newrelic_ini_ignored_params                           = undef,
-  $newrelic_ini_load_php_extension                       = undef,
+  $newrelic_ini_load_php_extension                       = true,
   $newrelic_ini_logfile                                  = undef,
   $newrelic_ini_loglevel                                 = undef,
   $newrelic_ini_transaction_tracer_custom                = undef,
