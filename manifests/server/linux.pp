@@ -39,8 +39,8 @@ class newrelic::server::linux (
   $newrelic_service_enable           = true,
   $newrelic_service_ensure           = 'running',
   $newrelic_license_key              = undef,
-  $newrelic_package_name             = $::newrelic::params::newrelic_package_name,
-  $newrelic_service_name             = $::newrelic::params::newrelic_service_name,
+  $newrelic_package_name             = $newrelic::params::newrelic_package_name,
+  $newrelic_service_name             = $newrelic::params::newrelic_service_name,
   $newrelic_nrsysmond_loglevel       = undef,
   $newrelic_nrsysmond_logfile        = undef,
   $newrelic_nrsysmond_proxy          = undef,
@@ -52,7 +52,7 @@ class newrelic::server::linux (
   $newrelic_nrsysmond_labels         = undef,
   $newrelic_nrsysmond_timeout        = undef,
   $newrelic_nrsysmond_hostname       = undef,
-) inherits ::newrelic {
+) inherits newrelic {
 
   if ! $newrelic_license_key {
     fail('You must specify a valid License Key.')

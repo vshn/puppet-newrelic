@@ -33,10 +33,10 @@
 class newrelic::agent::php (
   $newrelic_php_package_ensure                           = 'present',
   $newrelic_php_service_ensure                           = 'running',
-  $newrelic_php_conf_dir                                 = $::newrelic::params::newrelic_php_conf_dir,
-  $newrelic_php_exec_path                                = $::path,
-  $newrelic_php_package                                  = $::newrelic::params::newrelic_php_package,
-  $newrelic_php_service                                  = $::newrelic::params::newrelic_php_service,
+  $newrelic_php_conf_dir                                 = $newrelic::params::newrelic_php_conf_dir,
+  $newrelic_php_exec_path                                = $facts['path'],
+  $newrelic_php_package                                  = $newrelic::params::newrelic_php_package,
+  $newrelic_php_service                                  = $newrelic::params::newrelic_php_service,
   $newrelic_license_key                                  = undef,
   $newrelic_ini_appname                                  = undef,
   $newrelic_ini_browser_monitoring_auto_instrument       = undef,
@@ -76,7 +76,7 @@ class newrelic::agent::php (
   $newrelic_daemon_collector_host                        = undef,
   $newrelic_daemon_auditlog                              = undef,
   $newrelic_hostname                                     = undef,
-) inherits ::newrelic {
+) inherits newrelic {
 
   if ! $newrelic_license_key {
     fail('You must specify a valid License Key.')
@@ -94,7 +94,7 @@ class newrelic::agent::php (
     hasstatus  => true,
   }
 
-  ::newrelic::php::newrelic_ini { $newrelic_php_conf_dir:
+  newrelic::php::newrelic_ini { $newrelic_php_conf_dir:
     exec_path                                             => $newrelic_php_exec_path,
     newrelic_license_key                                  => $newrelic_license_key,
     newrelic_ini_appname                                  => $newrelic_ini_appname,

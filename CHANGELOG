@@ -2,6 +2,10 @@
 
 Release notes for the fsalum-newrelic module.
 
+#### 5.1.2
+
+* puppet8 / linter fixes
+
 #### 5.1.1 - 2024-06-05
 
 * Set newrelic_ini_load_php_extension default to true 

@@ -108,7 +108,7 @@ define newrelic::php (
     hasstatus  => true,
   }
 
-  ::newrelic::php::newrelic_ini { $newrelic_php_conf_dir:
+  newrelic::php::newrelic_ini { $newrelic_php_conf_dir:
     newrelic_license_key => $newrelic_license_key,
     newrelic_ini_appname => $newrelic_ini_appname,
     before               => [ File['/etc/newrelic/newrelic.cfg'], Service[$newrelic_php_service] ],

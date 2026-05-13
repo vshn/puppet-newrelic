@@ -1,5 +1,6 @@
 # This module should not be used directly. It is used by newrelic::php.
 define newrelic::php::newrelic_ini (
+  $exec_path,
   $newrelic_license_key,
   $newrelic_ini_appname,
   $newrelic_ini_browser_monitoring_auto_instrument       = undef,
@@ -39,7 +40,6 @@ define newrelic::php::newrelic_ini (
   $newrelic_daemon_collector_host                        = undef,
   $newrelic_daemon_auditlog                              = undef,
   $newrelic_hostname                                     = undef,
-  $exec_path,
 ) {
 
   exec { "/usr/bin/newrelic-install ${name}":

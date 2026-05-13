@@ -15,9 +15,9 @@ node default {
   windowsfeature{'Web-Filtering': }
   windowsfeature{'Web-Stat-Compression': }
   windowsfeature{'Web-Mgmt-Console': }
-  
+
   # Include .Net module
-  $dotnet_modules = $::operatingsystemrelease ? {
+  $dotnet_modules = $facts['os']['release']['full'] ? {
     /2008/  => ['Web-Asp-Net'],
     default => ['Web-Asp-Net','Web-Asp-Net45'],
   }
@@ -28,8 +28,8 @@ node default {
   }
 
   class {'newrelic::agent::dotnet':
-    newrelic_license_key   => '',
-    require                => Windowsfeature[$dotnet_modules],
+    newrelic_license_key => '',
+    require              => Windowsfeature[$dotnet_modules],
   }
 
 }
